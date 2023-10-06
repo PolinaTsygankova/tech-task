@@ -7,7 +7,6 @@ const CarsList = () => {
       <ul>
          {advertsCars?.map((car) => {
             const { id } = car;
-
             return <CarsItem carInfo={car} key={id} />;
          })}
       </ul>

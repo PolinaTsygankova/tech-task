@@ -8,29 +8,15 @@ import FavouritePage from "../pages/FavouritePage/FavouritePage";
 import SharedLayout from "./SharedLayout/SharedLayout";
 
 function App() {
-   return <h1>Hello world</h1>;
+   return (
+      <Routes>
+         <Route path="/" element={<SharedLayout />}>
+            <Route path="/" element={<WelcomePage />} />
+            <Route path="/catalog" element={<CataloguePage />} />
+            <Route path="/favorites" element={<FavouritePage />} />
+         </Route>
+      </Routes>
+   );
 }
 
 export default App;
-
-{
-   /* <Routes> */
-}
-{
-   /* <Route path="/" element={<SharedLayout />}> */
-}
-{
-   /* <Route path="/" element={<WelcomePage />} /> */
-}
-{
-   /* <Route path="/catalog" element={<CataloguePage />} /> */
-}
-{
-   /* <Route path="/favorites" element={<FavouritePage />} /> */
-}
-{
-   /* </Route> */
-}
-{
-   /* </Routes> */
-}

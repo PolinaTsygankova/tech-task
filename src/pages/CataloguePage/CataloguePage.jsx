@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import Form from "./../../components/Form/Form";
+import CarsList from "./../../components/CarsList/CarsList";
 
 const CataloguePage = () => {
-  return (
-    <div>CataloguePage</div>
-  )
-}
+   return (
+      <>
+         <Form />
 
-export default CataloguePage
+         <CarsList />
+      </>
+   );
+};
+
+export default CataloguePage;

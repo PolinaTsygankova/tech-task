@@ -2,7 +2,6 @@ import React from "react";
 // import logo from "./logo.svg";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
-
 import WelcomePage from "../pages/WelcomePage/WelcomePage";
 import CataloguePage from "../pages/CataloguePage/CataloguePage";
 import FavouritePage from "../pages/FavouritePage/FavouritePage";

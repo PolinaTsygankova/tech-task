@@ -1,5 +1,16 @@
 import React from "react";
-import { Image, ImageGradient, Card } from "./CarsItem.styled";
+import {
+   Image,
+   ImageGradient,
+   Card,
+   Title,
+   ModelAccent,
+   TitleWrapper,
+   InfoWrapper,
+   InfoItem,
+   FavouriteBtn,
+   LearnMoreBtn,
+} from "./CarsItem.styled";
 
 const CarsItem = ({ carInfo }) => {
    const {
@@ -13,7 +24,7 @@ const CarsItem = ({ carInfo }) => {
       //   fuelConsumption,
       engineSize,
       //   accessories,
-      //   functionalities,
+      functionalities,
       rentalPrice,
       rentalCompany,
       address,
@@ -23,28 +34,36 @@ const CarsItem = ({ carInfo }) => {
 
    const arrayOfAddress = address.split(" ");
    const country = arrayOfAddress[4];
-   const city = arrayOfAddress[3];
-
-   console.log(img);
+   const city = arrayOfAddress[3].substring(0, arrayOfAddress[3].length - 1);
+   const functionality = functionalities[0];
 
    return (
       <Card>
-         <ImageGradient />
+         <ImageGradient></ImageGradient>
+
          <Image
-            src={img !== undefined ? img : "default-img.webp"}
+            src={img === undefined ? "default-img.webp" : img}
             alt={model}
          />
 
-         <p>
-            {make} <span>{model},</span> {year}
-         </p>
+         <FavouriteBtn />
 
-         <p>{rentalPrice}</p>
+         <TitleWrapper>
+            <Title>
+               {make} <ModelAccent>{model},</ModelAccent> {year}
+            </Title>
 
-         <p>
-            {city} | {country}
-         </p>
-         <button>Learn more</button>
+            <p>{rentalPrice}</p>
+         </TitleWrapper>
+
+         <InfoWrapper>
+            <InfoItem>{city}</InfoItem> <InfoItem>{country}</InfoItem>
+            <InfoItem>{rentalCompany}</InfoItem> <InfoItem>{type}</InfoItem>
+            <InfoItem>{make}</InfoItem> <InfoItem>{id}</InfoItem>
+            {/* <InfoItem>{functionality}</InfoItem> */}
+         </InfoWrapper>
+
+         <LearnMoreBtn>Learn more</LearnMoreBtn>
       </Card>
    );
 };

@@ -2,8 +2,17 @@ import styled from "styled-components";
 
 export const Card = styled.div`
    position: relative;
+   padding: 14px;
    width: 274px;
    height: 450px;
+   border-radius: 10px;
+
+   transition: box-shadow 150ms ease-out;
+
+   &:hover {
+      box-shadow: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%),
+         0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
+   }
 `;
 
 export const Image = styled.img`
@@ -19,8 +28,8 @@ export const ImageGradient = styled.div`
    width: 274px;
    height: 274px;
    position: absolute;
-   top: 0;
-   left: 0;
+   top: 14px;
+   left: 14px;
 
    border-radius: 10px;
    overflow: hidden;
@@ -36,8 +45,8 @@ export const FavouriteBtn = styled.button`
    width: 18px;
    height: 18px;
    position: absolute;
-   top: 14px;
-   right: 14px;
+   top: 26px;
+   right: 26px;
 
    border: none;
    background-image: url("normal.svg");
@@ -80,8 +89,11 @@ export const InfoItem = styled.span`
    font-size: 12px;
    line-height: 1.5;
    padding-right: 6px;
-   border-right: 1.5px solid rgba(18, 20, 23, 0.1);
    margin-right: 6px;
+
+   &:not(:last-child) {
+      border-right: 1.5px solid rgba(18, 20, 23, 0.1);
+   }
 `;
 
 export const LearnMoreBtn = styled.button`
@@ -100,6 +112,13 @@ export const LearnMoreBtn = styled.button`
    font-size: 14px;
    font-weight: 600;
    line-height: 1.4;
+
+   transition: background-color 200ms ease-out;
+
+   &:hover,
+   &:focus {
+      background-color: #0b44cd;
+   }
 `;
 
 //export const Title = styled.p``

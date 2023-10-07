@@ -41,10 +41,11 @@ const CarsItem = ({ carInfo }) => {
       <Card>
          <ImageGradient></ImageGradient>
 
-         <Image
-            src={img === undefined ? "default-img.webp" : img}
-            alt={model}
-         />
+         {img === undefined ? (
+            <Image src="default-img.webp" alt={model} />
+         ) : (
+            <Image src={img} alt={model} />
+         )}
 
          <FavouriteBtn />
 

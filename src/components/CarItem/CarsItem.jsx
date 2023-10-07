@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, ImageWrapper } from "./CarsItem.styled";
+import { Image, ImageGradient, Card } from "./CarsItem.styled";
 
 const CarsItem = ({ carInfo }) => {
    const {
@@ -9,11 +9,11 @@ const CarsItem = ({ carInfo }) => {
       model,
       type,
       img,
-      description,
-      fuelConsumption,
+      //   description,
+      //   fuelConsumption,
       engineSize,
-      accessories,
-      functionalities,
+      //   accessories,
+      //   functionalities,
       rentalPrice,
       rentalCompany,
       address,
@@ -21,21 +21,31 @@ const CarsItem = ({ carInfo }) => {
       mileage,
    } = carInfo;
 
+   const arrayOfAddress = address.split(" ");
+   const country = arrayOfAddress[4];
+   const city = arrayOfAddress[3];
+
    console.log(img);
 
    return (
-      <div>
+      <Card>
+         <ImageGradient />
          <Image
-            src={img}
+            src={img !== undefined ? img : "default-img.webp"}
             alt={model}
-            style={{ backgroundImage: `url(${img})` }}
          />
 
-         <p>.</p>
-         <p></p>
-         <p>qweqweqwe | qweqwe</p>
+         <p>
+            {make} <span>{model},</span> {year}
+         </p>
+
+         <p>{rentalPrice}</p>
+
+         <p>
+            {city} | {country}
+         </p>
          <button>Learn more</button>
-      </div>
+      </Card>
    );
 };
 

@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/tech-task/static/css/main.02743afc.css",
-    "main.js": "/tech-task/static/js/main.64616447.js",
+    "main.js": "/tech-task/static/js/main.171a9685.js",
     "index.html": "/tech-task/index.html",
     "main.02743afc.css.map": "/tech-task/static/css/main.02743afc.css.map",
-    "main.64616447.js.map": "/tech-task/static/js/main.64616447.js.map"
+    "main.171a9685.js.map": "/tech-task/static/js/main.171a9685.js.map"
   },
   "entrypoints": [
     "static/css/main.02743afc.css",
-    "static/js/main.64616447.js"
+    "static/js/main.171a9685.js"
   ]
 }

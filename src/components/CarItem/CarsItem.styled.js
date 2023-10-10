@@ -45,11 +45,31 @@ export const FavouriteBtn = styled.button`
    width: 18px;
    height: 18px;
    position: absolute;
-   top: 26px;
-   right: 26px;
+   top: 16px;
+   right: 16px;
+   padding: 20px;
 
    border: none;
    background-image: url("normal.svg");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-color: transparent;
+   cursor: pointer;
+`;
+
+export const NotFavouriteBtn = styled.button`
+   width: 18px;
+   height: 18px;
+   position: absolute;
+   top: 16px;
+   right: 16px;
+   padding: 20px;
+
+   cursor: pointer;
+   border: none;
+   background-image: url("active.svg");
+   background-repeat: no-repeat;
+   background-position: center;
    background-color: transparent;
 `;
 

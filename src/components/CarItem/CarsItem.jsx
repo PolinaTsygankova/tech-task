@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import {
    Image,
    ImageGradient,
@@ -9,6 +9,7 @@ import {
    InfoWrapper,
    InfoItem,
    FavouriteBtn,
+   NotFavouriteBtn,
    LearnMoreBtn,
 } from "./CarsItem.styled";
 
@@ -32,6 +33,8 @@ const CarsItem = ({ carInfo }) => {
       mileage,
    } = carInfo;
 
+   const [isFavourite, setIsFavourite] = useState(false);
+
    const arrayOfAddress = address.split(" ");
    const country = arrayOfAddress[4];
    const city = arrayOfAddress[3].substring(0, arrayOfAddress[3].length - 1);
@@ -47,7 +50,11 @@ const CarsItem = ({ carInfo }) => {
             <Image src={img} alt={model} />
          )}
 
-         <FavouriteBtn />
+         {isFavourite ? (
+            <NotFavouriteBtn onClick={() => setIsFavourite(false)} />
+         ) : (
+            <FavouriteBtn onClick={() => setIsFavourite(true)} />
+         )}
 
          <TitleWrapper>
             <Title>

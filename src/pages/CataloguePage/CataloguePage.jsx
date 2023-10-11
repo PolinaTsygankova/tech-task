@@ -6,8 +6,6 @@ import Container from "./../../components/Container/Container";
 const CataloguePage = () => {
    return (
       <Container>
-         <Form />
-
          <CarsList />
       </Container>
    );

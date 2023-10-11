@@ -3,6 +3,6 @@ import { advertsReducer } from "./advertsSlice";
 
 export const store = configureStore({
    reducer: {
-      counter: advertsReducer,
+      cars: advertsReducer,
    },
 });

@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import CarsList from "./../../components/CarsList/CarsList";
 
 const FavouritePage = () => {
-  return (
-    <div>FavouritePage</div>
-  )
-}
+   return (
+      <div>
+         <CarsList />
+      </div>
+   );
+};
 
-export default FavouritePage
+export default FavouritePage;

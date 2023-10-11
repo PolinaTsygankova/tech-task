@@ -1,15 +1,20 @@
-import React from "react";
-// import logo from "./logo.svg";
+import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import WelcomePage from "../pages/WelcomePage/WelcomePage";
 import CataloguePage from "../pages/CataloguePage/CataloguePage";
 import FavouritePage from "../pages/FavouritePage/FavouritePage";
 import SharedLayout from "./SharedLayout/SharedLayout";
-import { Cloudinary } from "@cloudinary/url-gen";
+import { fetchCars } from "./../redux/operations";
 
 function App() {
-   const cld = new Cloudinary({ cloud: { cloudName: "dyajry491" } });
+   const dispatch = useDispatch();
+
+   useEffect(() => {
+      dispatch(fetchCars());
+   }, [dispatch]);
+
    return (
       <Routes>
          <Route path="/" element={<SharedLayout />}>

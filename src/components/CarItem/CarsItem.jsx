@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { toggleFavourite } from "../../redux/operations";
+import Modal from "../Modal/Modal";
 import {
    Image,
    ImageGradient,
@@ -13,7 +16,7 @@ import {
    LearnMoreBtn,
 } from "./CarsItem.styled";
 
-const CarsItem = ({ carInfo }) => {
+const CarsItem = ({ carInfo, car }) => {
    const {
       id,
       year,
@@ -23,22 +26,29 @@ const CarsItem = ({ carInfo }) => {
       img,
       //   description,
       //   fuelConsumption,
-      engineSize,
+      // engineSize,
       //   accessories,
-      functionalities,
+      // functionalities,
       rentalPrice,
       rentalCompany,
       address,
-      rentalConditions,
-      mileage,
+      // rentalConditions,
+      // mileage,
    } = carInfo;
 
+   const dispatch = useDispatch();
    const [isFavourite, setIsFavourite] = useState(false);
+   const [isModalVisible, setisModalVisible] = useState(false);
+
+   const handleToggle = () => {
+      dispatch(toggleFavourite(car));
+
+      setIsFavourite(!isFavourite);
+   };
 
    const arrayOfAddress = address.split(" ");
    const country = arrayOfAddress[4];
    const city = arrayOfAddress[3].substring(0, arrayOfAddress[3].length - 1);
-   const functionality = functionalities[0];
 
    return (
       <Card>
@@ -51,9 +61,9 @@ const CarsItem = ({ carInfo }) => {
          )}
 
          {isFavourite ? (
-            <NotFavouriteBtn onClick={() => setIsFavourite(false)} />
+            <NotFavouriteBtn onClick={handleToggle} />
          ) : (
-            <FavouriteBtn onClick={() => setIsFavourite(true)} />
+            <FavouriteBtn onClick={handleToggle} />
          )}
 
          <TitleWrapper>
@@ -71,7 +81,10 @@ const CarsItem = ({ carInfo }) => {
             {/* <InfoItem>{functionality}</InfoItem> */}
          </InfoWrapper>
 
-         <LearnMoreBtn>Learn more</LearnMoreBtn>
+         <LearnMoreBtn onClick={() => setisModalVisible(true)}>
+            Learn more
+         </LearnMoreBtn>
+         {isModalVisible && <Modal />}
       </Card>
    );
 };

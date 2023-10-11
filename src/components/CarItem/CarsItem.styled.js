@@ -140,5 +140,3 @@ export const LearnMoreBtn = styled.button`
       background-color: #0b44cd;
    }
 `;
-
-//export const Title = styled.p``

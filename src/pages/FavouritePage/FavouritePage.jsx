@@ -1,10 +1,10 @@
 import React from "react";
-import CarsList from "./../../components/CarsList/CarsList";
+import FavouriteCarsList from "./../../components/FavouriteCarsList/FavouriteCarsList";
 
 const FavouritePage = () => {
    return (
       <div>
-         <CarsList />
+         <FavouriteCarsList />
       </div>
    );
 };

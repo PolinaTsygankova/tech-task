@@ -24,16 +24,9 @@ const CarsItem = ({ carInfo, car }) => {
       model,
       type,
       img,
-      //   description,
-      //   fuelConsumption,
-      // engineSize,
-      //   accessories,
-      // functionalities,
       rentalPrice,
       rentalCompany,
       address,
-      // rentalConditions,
-      // mileage,
    } = carInfo;
 
    const dispatch = useDispatch();
@@ -78,7 +71,6 @@ const CarsItem = ({ carInfo, car }) => {
             <InfoItem>{city}</InfoItem> <InfoItem>{country}</InfoItem>
             <InfoItem>{rentalCompany}</InfoItem> <InfoItem>{type}</InfoItem>
             <InfoItem>{make}</InfoItem> <InfoItem>{id}</InfoItem>
-            {/* <InfoItem>{functionality}</InfoItem> */}
          </InfoWrapper>
 
          <LearnMoreBtn onClick={() => setisModalVisible(true)}>

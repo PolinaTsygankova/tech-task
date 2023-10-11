@@ -8,4 +8,9 @@ export const List = styled.ul`
    justify-content: center;
 `;
 
-//CREATE CONTAINER
+export const Title = styled.h1`
+   padding: 300px 0px;
+   display: flex;
+   justify-content: center;
+   color: #121417;
+`;

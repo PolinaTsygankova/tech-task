@@ -1,19 +1,25 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { allCars } from "../../redux/selectors";
+import { favouriteCars } from "../../redux/selectors";
 import CarsItem from "./../CarItem/CarsItem";
-import { List } from "./CarsList.styled";
+import { List, Title } from "../CarsList/CarsList.styled";
 
 const CarsList = () => {
-   const cars = useSelector(allCars);
+   const favouriteCarsArray = useSelector(favouriteCars);
 
    return (
-      <List>
-         {cars?.map((car) => {
-            const { id } = car;
-            return <CarsItem carInfo={car} key={id} car={car} />;
-         })}
-      </List>
+      <>
+         {favouriteCarsArray.length === 0 ? (
+            <Title>You don't add favourite cars yet</Title>
+         ) : (
+            <List>
+               {favouriteCarsArray.map((car) => {
+                  const { id } = car;
+                  return <CarsItem carInfo={car} key={id} car={car} />;
+               })}
+            </List>
+         )}
+      </>
    );
 };
 
